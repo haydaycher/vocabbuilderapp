@@ -17,6 +17,13 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
+.page-title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 133%;
+  color: var(--black);
+}
 
 @keyframes logo-spin {
   from {
@@ -39,4 +46,14 @@
 
 .read-the-docs {
   color: #888;
+}
+
+@media (min-width: 768px) {
+  .page-title {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 145%;
+    color: var(--black);
+  }
 }

@@ -1,5 +1,10 @@
 import React from "react";
+import "./App.css";
 
 export default function App() {
-  return <h1>Hello Vocab Builder App!</h1>;
+  return (
+    <main>
+      <h1 className="page-title">VocabBuild</h1>
+    </main>
+  );
 }
