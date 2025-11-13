@@ -1,0 +1,42 @@
+.mainpage-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #85aa9f;
+}
+
+.logo-wrapper {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.logo-svg {
+  transition: transform 0.3s ease;
+}
+
+.logo-svg:hover {
+  transform: scale(1.2);
+}
+
+.logo-text {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  transition: transform 0.3s ease;
+}
+
+.logo-text:hover {
+  transform: scale(1.1);
+}

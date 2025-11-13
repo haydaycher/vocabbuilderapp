@@ -21,8 +21,12 @@
     "vite": "^5.4.21"
   },
   "dependencies": {
+    "axios": "^1.13.2",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.66.0",
+    "react-router-dom": "^7.9.5",
+    "yup": "^1.7.1"
   },
   "description": "<<<<<<< HEAD\r # React + Vite",
   "main": "eslint.config.js",

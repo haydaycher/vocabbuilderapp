@@ -1,7 +1,14 @@
-const api = import.meta.env.VITE_API_BASE_URL;
+// src/services/api.js
+import axios from "axios";
 
-export const getCurrentUser = async () => {
-  const res = await fetch(`${api}/users/current`);
-  if (!res.ok) throw new Error("Failed to fetch user");
-  return res.json();
+export const api = axios.create({
+  baseURL: "https://vocab-builder-backend.p.goit.global",
+});
+
+export const setAuthToken = (token) => {
+  if (token) {
+    api.defaults.headers.common.Authorization = `Bearer ${token}`;
+  } else {
+    delete api.defaults.headers.common.Authorization;
+  }
 };
