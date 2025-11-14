@@ -1,3 +1,79 @@
-.container {
-  padding: 20px;
+.register_container {
+  padding: 16px 32px;
+  border-radius: 25px 25px 0 0;
+  width: 375px;
+  height: 549px;
+  background: rgba(133, 170, 159, 0.1);
+}
+
+.register_head_wrapper {
+  gap: 16px;
+  width: 343px;
+  height: 120px;
+}
+
+.register_h {
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 107%;
+  letter-spacing: -0.02em;
+  color: var(--black);
+}
+
+.register_p {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: rgba(18, 20, 23, 0.8);
+}
+.register_input_wrapper {
+  width: 343px;
+  height: 196px;
+}
+
+.register_btn {
+  background: 85AA9F;
+  border-radius: 30px;
+  padding: 16px 139px;
+  width: 343px;
+  height: 56px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--white);
+}
+.form_register {
+  gap: 14px;
+}
+.form_register input {
+  border: 1px solid rgba(18, 20, 23, 0.1);
+  border-radius: 15px;
+  padding: 16px 280px 16px 18px;
+
+  background-color: none;
+}
+
+.logo_wrapper {
+  padding: 11px;
+  margin: 0;
+  gap: 16px;
+  width: 182px;
+  height: 36px;
+}
+
+.logo_svg {
+  width: 36px;
+  height: 36px;
+}
+
+.logo_text {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 133%;
+  color: var(--black);
 }
