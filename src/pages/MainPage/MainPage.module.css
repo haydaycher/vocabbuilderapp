@@ -1,4 +1,5 @@
-.mainpage-container {
+.mainpage_container {
+  width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -6,11 +7,10 @@
   background-color: #85aa9f;
 }
 
-.logo-wrapper {
+.logo_wrapper {
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 10px;
   opacity: 0;
   transform: translateY(-20px);
   transition: opacity 1s ease, transform 1s ease;
@@ -21,22 +21,26 @@
   transform: translateY(0);
 }
 
-.logo-svg {
+.logo_svg {
   transition: transform 0.3s ease;
 }
 
-.logo-svg:hover {
+/* .logo_svg:hover {
   transform: scale(1.2);
-}
+} */
 
-.logo-text {
+.logo_text {
+  font-family: MacPawFixelDisplay-SemiBold, sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 145%;
+
+  padding: 4px 16px 4px 16px;
   color: white;
-  font-size: 2rem;
-  font-weight: bold;
-  font-family: Arial, sans-serif;
+
   transition: transform 0.3s ease;
 }
 
-.logo-text:hover {
+.logo_text:hover {
   transform: scale(1.1);
 }

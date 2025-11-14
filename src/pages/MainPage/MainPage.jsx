@@ -20,27 +20,16 @@ export default function MainPage() {
   if (user) return null;
 
   return (
-    <div className={css["mainpage-container"]}>
+    <div className={css.mainpage_container}>
       <div
-        className={`${css["logo-wrapper"]} ${visible ? css.visible : ""}`}
+        className={`${css.logo_wrapper} ${visible ? css.visible : ""}`}
         onClick={() => navigate("/register")}
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="50"
-          height="50"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="white"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className={css["logo-svg"]}
-        >
-          <path d="M12 2L2 12h3v8h14v-8h3L12 2z" />
+        <svg className={css.logo_svg} width="40" height="40">
+          <use href="/src/assets/icons/sprite.svg#icon-favicon-mainpage" />
         </svg>
 
-        <span className={css["logo-text"]}>VocabBuilder</span>
+        <span className={css.logo_text}>VocabBuilder</span>
       </div>
     </div>
   );
