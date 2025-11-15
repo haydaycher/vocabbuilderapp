@@ -1,33 +1,23 @@
-// src/components/Header/Header.jsx
-import { Link } from "react-router-dom";
-import { useAuth } from "../../hooks/useAuth";
+import css from "./Header.module.css";
+import { useNavigate } from "react-router-dom";
 
-export const Header = () => {
-  const { token, logout } = useAuth();
+const Header = () => {
+  const navigate = useNavigate();
 
   return (
-    <header
-      style={{
-        display: "flex",
-        gap: "20px",
-        alignItems: "center",
-        padding: "10px 20px",
-        background: "#f5f5f5",
-      }}
-    >
-      <Link to="/">Головна</Link>
-      {!token && (
-        <>
-          <Link to="/login">Увійти</Link>
-          <Link to="/register">Реєстрація</Link>
-        </>
-      )}
-      {token && (
-        <>
-          <Link to="/dictionary">Мій словник</Link>
-          <button onClick={logout}>Вийти</button>
-        </>
-      )}
+    <header className={css.header}>
+      <div
+        className={css.logo_wrapper}
+        onClick={() => navigate("/")}
+        style={{ cursor: "pointer" }}
+      >
+        <svg className={css.logo_svg} width="40" height="40">
+          <use href="/src/assets/icons/sprite.svg#icon-favicon-mobile" />
+        </svg>
+        <span className={css.logo_text}>VocabBuilder</span>
+      </div>
     </header>
   );
 };
+
+export default Header;

@@ -1,22 +1,24 @@
 .register_section {
-  justify-content: center;
-  align-items: center;
-  /* display: flex; */
-  height: 100vh;
-  gap: 8px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+
 .register_container {
-  padding: 16px 32px;
+  padding: 32px 16px;
   border-radius: 25px 25px 0 0;
-  width: 375px;
-  height: 549px;
+  max-width: 480px;
+  margin: 0 auto;
   background: rgba(133, 170, 159, 0.1);
+  align-items: center;
+}
+
+.register_low_container {
+  visibility: hidden;
 }
 
 .register_head_wrapper {
   gap: 16px;
-  /* width: 343px;
-  height: 120px; */
 }
 
 .register_h {
@@ -37,84 +39,173 @@
   color: rgba(18, 20, 23, 0.8);
 }
 .register_input_wrapper {
-  width: 343px;
-  height: 196px;
+  align-items: center;
+  justify-content: center;
 }
 
 .register_btn {
-  background: 85AA9F;
+  width: 100%;
+  padding: 16px;
   border-radius: 30px;
-  padding: 16px 139px;
-  width: 343px;
-  height: 56px;
+  background: #85aa9f;
+  outline: none;
+  border: none;
   font-family: var(--font-family);
   font-weight: 700;
   font-size: 16px;
   line-height: 150%;
-  color: var(--white);
+  color: #fcfcfc;
+  text-align: center;
+  box-sizing: border-box;
 }
+
 .form_register {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   gap: 14px;
+  margin-bottom: 32px;
 }
+
 .form_register input {
+  width: 100%;
+  box-sizing: border-box;
   border: 1px solid rgba(18, 20, 23, 0.1);
   border-radius: 15px;
   padding: 16px 280px 16px 18px;
 
-  background-color: none;
-}
-
-.logo_wrapper {
-  padding: 11px;
-  margin: 0;
-  gap: 16px;
-  width: 182px;
-  height: 36px;
-}
-
-.logo_svg {
-  width: 36px;
-  height: 36px;
-}
-
-.logo_text {
   font-family: var(--font-family);
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 133%;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
   color: var(--black);
 }
 
-/* Ховаємо всюди за замовчуванням */
-.illustration {
-  display: none;
+.register_bg {
   width: 100%;
-  margin: 48px 12px;
-  height: 191px;
-  background-size: cover;
-  background-position: center;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Мобілка (до 767px) — показуємо мобільну картинку */
-@media (max-width: 767px) {
+.illustration {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  margin-bottom: 8px;
+}
+
+.illustration_img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 12px 48px;
+  max-width: 600px;
+}
+
+.register_link {
+  display: block;
+  text-align: center;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: rgba(18, 20, 23, 0.5);
+  margin-top: 16px;
+}
+
+@media (min-width: 768px) {
   .illustration {
-    display: block;
+    display: none;
+  }
+
+  .register_section {
+    justify-content: center;
+    background-repeat: no-repeat; /* щоб зображення не повторювалося */
+    background-position: right bottom; /* нижній правий кут */
+    background-size: auto; /* залишаємо оригінальний розмір, можна змінити */
+
     background-image: image-set(
-      url("/src/assets/images/illustration_mob.webp") 1x,
-      url("/src/assets/images/illustration_mob2x.webp") 2x
+      url("/src/assets/images/Vector_tabl.webp") 1x,
+      url("/src/assets/images/Vector_tabl2x.webp") 2x
     );
+    background-position: right bottom; /* нижній правий кут */
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
+
+  .register_container {
+    border-radius: 30px;
+    width: 627px;
+
+    padding: 48px 64px;
+  }
+
+  .register_h {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    color: var(--black);
+  }
+
+  .register_p {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    color: rgba(18, 20, 23, 0.8);
+  }
+
+  .register_head_wrapper {
+    gap: 20px;
+  }
+  .register_btn {
+    font-size: 18px;
+    line-height: 156%;
+  }
+
+  .register_low_container {
+    visibility: visible;
+    font-family: var(--font-family);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: rgba(18, 20, 23, 0.8);
+    margin-top: 98px;
+    justify-content: center;
+  }
+
+  /* Крапки як окремі елементи */
+  .register_low_container a + a::before {
+    content: "·";
+    margin: 0 8px;
+    color: rgba(18, 20, 23, 0.8);
   }
 }
 
-/* Tablet — приховано (нічого не робимо) */
+@media (min-width: 1440px) {
+  .register_section {
+    display: inline-flex;
+    background-image: none;
+  }
 
-/* Десктопи (1200px+) — показуємо десктопну картинку */
-@media (min-width: 1200px) {
-  .illustration {
-    display: block;
-    background-image: image-set(
-      url("/src/assets/images/illustration_desk.webp") 1x,
-      url("/src/assets/images/illustration_desk2x.webp") 2x
-    );
+  .register_bg {
+    visibility: visible;
+  }
+
+  .register_low_container {
+    visibility: hidden;
   }
 }

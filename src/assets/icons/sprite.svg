@@ -24,11 +24,11 @@
 <path fill="none" stroke="#85aa9f" style="stroke: var(--color6, #85aa9f)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4" d="M16 6.667v18.666M6.667 16h18.666"></path>
 </symbol>
 <symbol id="icon-eye" viewBox="0 0 32 32">
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.2" d="M1.333 16s5.334-10.667 14.667-10.667 14.667 10.667 14.667 10.667-5.334 10.667-14.667 10.667-14.667-10.667-14.667-10.667z"></path>
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.2" d="M16 20c2.209 0 4-1.791 4-4s-1.791-4-4-4v0c-2.209 0-4 1.791-4 4s1.791 4 4 4v0z"></path>
+<path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.2" d="M1.333 16s5.334-10.667 14.667-10.667 14.667 10.667 14.667 10.667-5.334 10.667-14.667 10.667-14.667-10.667-14.667-10.667z"></path>
+<path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.2" d="M16 20c2.209 0 4-1.791 4-4s-1.791-4-4-4v0c-2.209 0-4 1.791-4 4s1.791 4 4 4v0z"></path>
 </symbol>
 <symbol id="icon-eye-off" viewBox="0 0 32 32">
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.2" d="M23.92 23.92c-2.175 1.672-4.923 2.696-7.908 2.747l-0.012 0c-9.333 0-14.667-10.667-14.667-10.667 1.713-3.152 3.978-5.791 6.689-7.877l0.058-0.043M13.2 5.653c0.833-0.203 1.788-0.32 2.771-0.32 0.010 0 0.020 0 0.030 0h-0.002c9.333 0 14.667 10.667 14.667 10.667-0.871 1.615-1.826 3.008-2.91 4.289l0.030-0.036M18.827 18.827c-0.731 0.774-1.764 1.256-2.91 1.256-2.209 0-4-1.791-4-4 0-1.146 0.482-2.179 1.254-2.909l0.002-0.002M1.333 1.333l29.334 29.334"></path>
+<path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.2" d="M23.92 23.92c-2.175 1.672-4.923 2.696-7.908 2.747l-0.012 0c-9.333 0-14.667-10.667-14.667-10.667 1.713-3.152 3.978-5.791 6.689-7.877l0.058-0.043M13.2 5.653c0.833-0.203 1.788-0.32 2.771-0.32 0.010 0 0.020 0 0.030 0h-0.002c9.333 0 14.667 10.667 14.667 10.667-0.871 1.615-1.826 3.008-2.91 4.289l0.030-0.036M18.827 18.827c-0.731 0.774-1.764 1.256-2.91 1.256-2.209 0-4-1.791-4-4 0-1.146 0.482-2.179 1.254-2.909l0.002-0.002M1.333 1.333l29.334 29.334"></path>
 </symbol>
 <symbol id="icon-trash-01" viewBox="0 0 32 32">
 <path fill="none" stroke="#85aa9f" style="stroke: var(--color6, #85aa9f)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.88" d="M12 4h8M13.333 14v6.667M18.667 14v6.667M4 8h24M25.333 8l-0.934 14.026c-0.141 2.104-0.211 3.157-0.666 3.955-0.405 0.703-0.997 1.258-1.708 1.609l-0.023 0.010c-0.826 0.4-1.88 0.4-3.989 0.4h-4.026c-2.109 0-3.163 0-3.989-0.4-0.734-0.361-1.326-0.917-1.721-1.6l-0.010-0.019c-0.454-0.8-0.525-1.851-0.666-3.955l-0.934-14.026"></path>
