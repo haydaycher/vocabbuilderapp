@@ -26,7 +26,7 @@ const RegisterPage = () => {
   };
 
   return (
-    <section>
+    <section className={css.register_section}>
       <div className={css.register_bg}>
         <div className={css.logo_wrapper}>
           <svg className={css.logo_svg} width="40" height="40">
@@ -35,6 +35,7 @@ const RegisterPage = () => {
 
           <span className={css.logo_text}>VocabBuilder</span>
         </div>
+        <div className={css.illustration}></div>
       </div>
       <div className={css.register_container}>
         <div className={css.register_head_wrapper}>

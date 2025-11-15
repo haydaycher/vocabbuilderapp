@@ -1,3 +1,10 @@
+.register_section {
+  justify-content: center;
+  align-items: center;
+  /* display: flex; */
+  height: 100vh;
+  gap: 8px;
+}
 .register_container {
   padding: 16px 32px;
   border-radius: 25px 25px 0 0;
@@ -8,8 +15,8 @@
 
 .register_head_wrapper {
   gap: 16px;
-  width: 343px;
-  height: 120px;
+  /* width: 343px;
+  height: 120px; */
 }
 
 .register_h {
@@ -76,4 +83,38 @@
   font-size: 18px;
   line-height: 133%;
   color: var(--black);
+}
+
+/* Ховаємо всюди за замовчуванням */
+.illustration {
+  display: none;
+  width: 100%;
+  margin: 48px 12px;
+  height: 191px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Мобілка (до 767px) — показуємо мобільну картинку */
+@media (max-width: 767px) {
+  .illustration {
+    display: block;
+    background-image: image-set(
+      url("/src/assets/images/illustration_mob.webp") 1x,
+      url("/src/assets/images/illustration_mob2x.webp") 2x
+    );
+  }
+}
+
+/* Tablet — приховано (нічого не робимо) */
+
+/* Десктопи (1200px+) — показуємо десктопну картинку */
+@media (min-width: 1200px) {
+  .illustration {
+    display: block;
+    background-image: image-set(
+      url("/src/assets/images/illustration_desk.webp") 1x,
+      url("/src/assets/images/illustration_desk2x.webp") 2x
+    );
+  }
 }
