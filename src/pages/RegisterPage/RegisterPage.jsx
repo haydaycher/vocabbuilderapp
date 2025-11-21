@@ -1,124 +1,109 @@
 import { useState } from "react";
-import { register } from "../../api/auth";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 import css from "./RegisterPage.module.css";
+
+// Схема валідації
+const schema = yup.object({
+  name: yup.string().required("Name is required"),
+  email: yup.string().email("Invalid email").required("Email is required"),
+  password: yup
+    .string()
+    .required("Password is required")
+    .matches(
+      /^[A-Za-z\d]{7,}$/,
+      "Password must have at least 7 characters and letters + numbers"
+    ),
+});
 
 const RegisterPage = () => {
   const navigate = useNavigate();
-  const { setUser } = useAuth();
-  const [form, setForm] = useState({ name: "", email: "", password: "" });
-  const [error, setError] = useState("");
+  const { register: registerUser } = useAuth(); // для бекенду
+  const {
+    register: formRegister,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
   const [showPassword, setShowPassword] = useState(false);
+  const [serverError, setServerError] = useState("");
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const togglePassword = () => setShowPassword((prev) => !prev);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const onSubmit = async (data) => {
     try {
-      const user = await register(form);
-      setUser(user);
+      console.log("Form data:", data);
+      await registerUser(data); // виклик бекенду
       navigate("/dictionary");
     } catch (err) {
-      setError(err.response?.data?.message || "Помилка реєстрації");
+      setServerError(err.message || "Server error");
     }
   };
 
   return (
     <section className={css.register_section}>
-      <div className={css.register_bg}>
-        <div className={css.illustration}>
-          <img
-            className={css.illustration_img}
-            src="/src/assets/images/illustration_mob.webp"
-            srcSet="/src/assets/images/illustration_mob2x.webp 2x,
-                    /src/assets/images/illustration_desk.webp 1x,
-                    /src/assets/images/illustration_desk2x.webp 2x"
-            alt="Illustration"
-          />
-        </div>
-      </div>
       <div className={css.register_container}>
-        <div className={css.register_head_wrapper}>
-          <h2 className={css.register_h}>Register</h2>
-          <p className={css.register_p}>
-            To start using our services, please fill out the registration form
-            below. All fields are mandatory:
-          </p>
-        </div>
-        <div className={css.register_input_wrapper}>
-          <form className={css.form_register} onSubmit={handleSubmit}>
-            <input
-              name="name"
-              placeholder="Name"
-              value={form.name}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={form.email}
-              onChange={handleChange}
-              required
-            />
-            <div style={{ position: "relative", width: "100%" }}>
-              <input
-                type={showPassword ? "text" : "password"}
-                name="password"
-                placeholder="Password"
-                value={form.password}
-                onChange={handleChange}
-                required
-                style={{
-                  width: "100%",
-                  padding: "16px 50px 16px 18px",
-                  boxSizing: "border-box",
-                  borderRadius: "15px",
-                  border: "1px solid rgba(18, 20, 23, 0.1)",
-                }}
-              />
-              <button
-                type="button"
-                onClick={togglePassword}
-                style={{
-                  position: "absolute",
-                  right: "16px",
-                  top: "50%",
-                  transform: "translateY(-50%)",
-                  background: "none",
-                  border: "none",
-                  padding: 0,
-                  cursor: "pointer",
-                }}
-              >
-                <svg width="24" height="24">
-                  <use
-                    xlinkHref={`/src/assets/icons/sprite.svg#${
-                      showPassword ? "icon-eye" : "icon-eye-off"
-                    }`}
-                  />
-                </svg>
-              </button>
-            </div>
-            <button className={css.register_btn} type="submit">
-              Register
-            </button>
-            <a className={css.register_link} href="/login">
-              Login
-            </a>
-          </form>
-        </div>
+        <h2 className={css.register_h}>Register</h2>
+        <form className={css.form_register} onSubmit={handleSubmit(onSubmit)}>
+          <input {...formRegister("name")} placeholder="Name" />
+          {errors.name && <p style={{ color: "red" }}>{errors.name.message}</p>}
 
-        {error && <p style={{ color: "red" }}>{error}</p>}
-      </div>
-      <div className={css.register_low_container}>
-        <a>Word</a> <a>Translation</a> <a>Grammar</a> <a>Progress</a>
+          <input {...formRegister("email")} placeholder="Email" />
+          {errors.email && (
+            <p style={{ color: "red" }}>{errors.email.message}</p>
+          )}
+
+          <div style={{ position: "relative", width: "100%" }}>
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder="Password"
+              {...formRegister("password")}
+              style={{
+                width: "100%",
+                padding: "16px 50px 16px 18px",
+                boxSizing: "border-box",
+                borderRadius: "15px",
+                border: "1px solid rgba(18, 20, 23, 0.1)",
+              }}
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword((prev) => !prev)}
+              style={{
+                position: "absolute",
+                right: "16px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                background: "none",
+                border: "none",
+                padding: 0,
+                cursor: "pointer",
+              }}
+            >
+              <svg width="24" height="24">
+                <use
+                  xlinkHref={`/src/assets/icons/sprite.svg#${
+                    showPassword ? "icon-eye" : "icon-eye-off"
+                  }`}
+                />
+              </svg>
+            </button>
+          </div>
+          {errors.password && (
+            <p style={{ color: "red" }}>{errors.password.message}</p>
+          )}
+
+          <button className={css.register_btn} type="submit">
+            Register
+          </button>
+        </form>
+        {serverError && <p style={{ color: "red" }}>{serverError}</p>}
+        <a className={css.register_link} href="/login">
+          Login
+        </a>
       </div>
     </section>
   );

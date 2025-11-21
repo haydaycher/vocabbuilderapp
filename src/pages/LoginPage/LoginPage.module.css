@@ -1,3 +1,215 @@
-.container {
-  padding: 20px;
+.login_section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.login_container {
+  padding: 32px 16px;
+  border-radius: 25px 25px 0 0;
+  max-width: 480px;
+  margin: 0 auto;
+  background: rgba(133, 170, 159, 0.1);
+  align-items: center;
+}
+
+.login_low_container {
+  visibility: visible;
+  margin-top: 16px;
+  margin-bottom: 43px;
+}
+
+.login_head_wrapper {
+  gap: 16px;
+}
+
+.login_h {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 107%;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  margin: 0;
+}
+
+.login_p {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: rgba(18, 20, 23, 0.8);
+}
+.login_input_wrapper {
+  align-items: center;
+  justify-content: center;
+}
+
+.login_btn {
+  width: 100%;
+  padding: 16px;
+  border-radius: 30px;
+  background: #85aa9f;
+  outline: none;
+  border: none;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  color: #fcfcfc;
+  text-align: center;
+  box-sizing: border-box;
+  margin-top: 32px;
+}
+
+.form_login {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.form_login input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(18, 20, 23, 0.1);
+  border-radius: 15px;
+  padding: 16px 280px 16px 18px;
+
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--black);
+  margin: 0;
+}
+
+.login_bg {
+  width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.illustration {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+}
+
+.illustration_img {
+  width: 100%;
+  height: auto;
+  display: block;
+
+  /* padding: 12px 64px 8px 64px; */
+  max-width: 247px;
+}
+
+.login_link {
+  display: block;
+  text-align: center;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: rgba(18, 20, 23, 0.5);
+  margin-top: 16px;
+}
+
+@media (min-width: 768px) {
+  .illustration {
+    display: none;
+  }
+
+  .login_section {
+    justify-content: center;
+    background-repeat: no-repeat; /* щоб зображення не повторювалося */
+    background-position: right bottom; /* нижній правий кут */
+    background-size: auto; /* залишаємо оригінальний розмір, можна змінити */
+
+    background-image: image-set(
+      url("/src/assets/images/Vector_tabl.webp") 1x,
+      url("/src/assets/images/Vector_tabl2x.webp") 2x
+    );
+    background-position: right bottom; /* нижній правий кут */
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
+
+  .login_container {
+    border-radius: 30px;
+    width: 627px;
+
+    padding: 48px 64px;
+  }
+
+  .login_h {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    color: var(--black);
+  }
+
+  .login_p {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    color: rgba(18, 20, 23, 0.8);
+  }
+
+  .login_head_wrapper {
+    gap: 20px;
+  }
+  .login_btn {
+    font-size: 18px;
+    line-height: 156%;
+  }
+
+  .login_low_container {
+    visibility: visible;
+    font-family: var(--font-family);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: rgba(18, 20, 23, 0.8);
+    margin-top: 98px;
+    justify-content: center;
+  }
+
+  /* Крапки як окремі елементи */
+  .login_low_container a + a::before {
+    content: "·";
+    margin: 0 8px;
+    color: rgba(18, 20, 23, 0.8);
+  }
+}
+
+@media (min-width: 1440px) {
+  .login_section {
+    display: inline-flex;
+    background-image: none;
+  }
+
+  .login_bg {
+    visibility: visible;
+  }
+
+  .login_low_container {
+    visibility: hidden;
+  }
 }

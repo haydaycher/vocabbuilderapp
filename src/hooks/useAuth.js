@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-axios.defaults.baseURL = "https://vocab-builder-backend.p.goit.global";
+axios.defaults.baseURL = "https://vocab-builder-backend.p.goit.global/api";
 
 export const useAuth = () => {
   const [user, setUser] = useState(null);
