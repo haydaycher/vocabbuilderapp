@@ -12,12 +12,13 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <Routes>
+          {/* Публічні сторінки без Layout */}
           <Route path="/" element={<MainPage />} />
+          <Route path="register" element={<RegisterPage />} />
+          <Route path="login" element={<LoginPage />} />
 
-          {/* всі сторінки з хедером */}
-          <Route path="/" element={<Layout />}>
-            <Route path="register" element={<RegisterPage />} />
-            <Route path="login" element={<LoginPage />} />
+          {/* Приватні сторінки з Layout */}
+          <Route element={<Layout />}>
             <Route
               path="dictionary"
               element={
